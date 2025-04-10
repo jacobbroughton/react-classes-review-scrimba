@@ -21,9 +21,16 @@ import "./App.css";
 // }
 
 export default class App extends React.Component {
-  state = {
-    goOut: "Yes",
-  };
+  constructor() {
+    // calls constructor method of the parent class that we are extending from, gives us ability to use this.setState
+    super();
+    this.state = {
+      goOut: "Yes",
+    };
+
+    // ensures the function exists within 'this'
+    this.toggleGoOut = this.toggleGoOut.bind(this);
+  }
 
   // class method
   // use arrow function if it uses this.setstate
